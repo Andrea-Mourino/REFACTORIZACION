@@ -289,3 +289,4 @@ Podemos seleccionar diferentes elementos para mostrar su men√∫ de refactorizaci√
 ### Cambios Refactorizacion
 
 1. Cambiamos los nombres a los valores para hacermo mas claro
+2. Extraemos un metodo y le cambiamos el nombre a isTin

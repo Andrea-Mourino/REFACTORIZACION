@@ -6,7 +6,7 @@ public class Main {
         String score = "";
         int tempScore=0;
 
-        if (pointsPlayer1 == pointsPlayer2) {
+        if (isTie(pointsPlayer1, pointsPlayer2)) {
             switch (pointsPlayer1)
             {
                 case 0:
@@ -60,5 +60,9 @@ public class Main {
 
         }
     return score;
+    }
+
+    private static boolean isTie(int pointsPlayer1, int pointsPlayer2) {
+        return pointsPlayer1 == pointsPlayer2;
     }
 }
