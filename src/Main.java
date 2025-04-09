@@ -96,6 +96,4 @@ public class Main {
         return pointsPlayer1 == PointsPlayer2;
     }
 
-
-
 }
