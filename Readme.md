@@ -299,3 +299,4 @@ Podemos seleccionar diferentes elementos para mostrar su men√∫ de refactorizaci√
 9. Remove switch
 10. Extraer un metodo isAdvantage
 11. Extraer getAdvantageScores method
+12. Extraer isWin method
