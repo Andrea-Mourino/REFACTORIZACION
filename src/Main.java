@@ -3,21 +3,19 @@ public class Main {
      * metodo para devolver la puntuacion de tenis
      */
     public static String getScore( int pointsPlayer1, int pointsPlayer2) {
-        String score = "";
         int tempScore=0;
 
         if (isTie(pointsPlayer1, pointsPlayer2)) {
-            score = getTieScores(pointsPlayer1);
+            return getTieScores(pointsPlayer1);
         } else if (isAdvantageOrWin(pointsPlayer1, pointsPlayer2)) {
-            score = getAdvantageOrWinScores(pointsPlayer1, pointsPlayer2);
+            return getAdvantageOrWinScores(pointsPlayer1, pointsPlayer2);
         } else {
-            score = getRegularScores(pointsPlayer1, pointsPlayer2, score);
+            return getRegularScores(pointsPlayer1, pointsPlayer2);
         }
-
-    return score;
     }
 
-    private static String getRegularScores(int pointsPlayer1, int pointsPlayer2, String score) {
+    private static String getRegularScores(int pointsPlayer1, int pointsPlayer2) {
+        String score= "";
         int tempScore;
         for (int i = 1; i<3; i++) {
             if (i==1)
@@ -45,7 +43,7 @@ public class Main {
     }
 
     private static String getAdvantageOrWinScores(int pointsPlayer1, int pointsPlayer2) {
-        String score;
+        String score= "";
         int minusResult = pointsPlayer1 - pointsPlayer2;
         if (minusResult==1) {
             score ="Advantage player1";
@@ -64,7 +62,7 @@ public class Main {
     }
 
     private static String getTieScores(int pointsPlayer1) {
-        String score;
+        String score = "";
         switch (pointsPlayer1)
         {
             case 0:
