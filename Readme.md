@@ -294,3 +294,4 @@ Podemos seleccionar diferentes elementos para mostrar su men√∫ de refactorizaci√
 4. Extraemos metodo de getRegularScores
 5. Removemos la variable score
 6. Eliminamos la variable TempScore
+7. Eliminamos la variable Score de getTieScores
