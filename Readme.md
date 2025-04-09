@@ -298,3 +298,4 @@ Podemos seleccionar diferentes elementos para mostrar su men√∫ de refactorizaci√
 8. Cambiamos el nombre de la variable por Jugadores en plural para ser mas concisos
 9. Remove switch
 10. Extraer un metodo isAdvantage
+11. Extraer getAdvantageScores method
