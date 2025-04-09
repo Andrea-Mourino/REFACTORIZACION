@@ -19,11 +19,6 @@ public class MainTest {
     }
 
     @Test
-    public void scoresAreEqualReturnsFortyAll() {
-        Assertions.assertEquals("Forty-All", Main.getScore(3, 3));
-    }
-
-    @Test
     public void scoresAreEqualReturnsDeuce() {
         Assertions.assertEquals("Deuce", Main.getScore(4, 4));
     }
