@@ -61,8 +61,8 @@ public class Main {
         return pointsPlayer1 >= 4 || pointsPlayer2 >= 4;
     }
 
-    private static String getTieScores(int pointsPlayer1) {
-        switch (pointsPlayer1)
+    private static String getTieScores(int pointsPlayers) {
+        switch (pointsPlayers)
         {
             case 0:
                 return  "Love-All";

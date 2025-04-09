@@ -295,3 +295,5 @@ Podemos seleccionar diferentes elementos para mostrar su men√∫ de refactorizaci√
 5. Removemos la variable score
 6. Eliminamos la variable TempScore
 7. Eliminamos la variable Score de getTieScores
+8. Cambiamos el nombre de la variable por Jugadores en plural para ser mas concisos
+9. 
