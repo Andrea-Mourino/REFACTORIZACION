@@ -2,17 +2,42 @@ public class Main {
     /**
      * metodo para devolver la puntuacion de tenis
      */
-    public static String getScore( int pointsPlayer1, int pointsPlayer2) {
-        if (isTie(pointsPlayer1, pointsPlayer2)) {
-            return getTieScores(pointsPlayer1);
-        } else if (isAdvantageOrWin(pointsPlayer1, pointsPlayer2)) {
-            return getAdvantageOrWinScores(pointsPlayer1, pointsPlayer2);
-        } else {
-            return obtenerPuntuacionSinVentajaSinEmpate(pointsPlayer2, pointsPlayer1);
+    public static String getScore(int pointsPlayer1, int PointsPlayer2) {
+
+        if (isTie(pointsPlayer1, PointsPlayer2)) {
+            return getTieScore(pointsPlayer1);
+        }
+        else if (isAdvantage(pointsPlayer1, PointsPlayer2)) {
+            String score = "";
+            int minusResult = pointsPlayer1 - PointsPlayer2;
+            if (minusResult==1) score ="Advantage player1";
+            else if (minusResult ==-1) score ="Advantage player2";
+            else if (minusResult>=2) score = "Win for player1";
+            else score ="Win for player2";
+            return score;
+        }
+
+        else if (pointsPlayer1 >= 4 || PointsPlayer2 >= 4)
+        {
+            String score = "";
+            int minusResult = pointsPlayer1 - PointsPlayer2;
+            if (minusResult>=2) score = "Win for player1";
+            else score ="Win for player2";
+            return score;
+        }
+        else
+        {
+            return getPuntuacionSinVentajaoEmpate(pointsPlayer1, PointsPlayer2);
+
         }
     }
 
-    private static String obtenerPuntuacionSinVentajaSinEmpate(int pointsPlayer2, int pointsPlayer1) {
+    private static boolean isAdvantage(int pointsPlayer1, int PointsPlayer2) {
+        return (pointsPlayer1 >= 4 || PointsPlayer2 >= 4) && (pointsPlayer1 - PointsPlayer2 == 1 ||
+                pointsPlayer1 - PointsPlayer2 == -1);
+    }
+
+    private static String getPuntuacionSinVentajaoEmpate(int pointsPlayer1, int pointsPlayer2 ) {
         String score = "";
         score = getRegularScores(pointsPlayer1, score);
         score +="-";
@@ -22,51 +47,37 @@ public class Main {
     }
 
 
-    private static String getRegularScores(int pointsPlayer1, String score) {
+    private static String getRegularScores(int pointsPlayer1, String score ) {
 
-            switch(pointsPlayer1) {
-                case 0:
-                    score +="Love";
-                    break;
-                case 1:
-                    score +="Fifteen";
-                    break;
-                case 2:
-                    score +="Thirty";
-                    break;
-                case 3:
-                    score +="Forty";
-                    break;
-            }
-        return score;
+        switch(pointsPlayer1)
+        {
+            case 0:
+                score +="Love";
+                break;
+            case 1:
+                score +="Fifteen";
+                break;
+            case 2:
+                score +="Thirty";
+                break;
+            case 3:
+                score +="Forty";
+                break;
         }
 
-
-    private static String getAdvantageOrWinScores(int pointsPlayer1, int pointsPlayer2) {
-        String score= "";
-        int minusResult = pointsPlayer1 - pointsPlayer2;
-        if (minusResult==1) {
-            score ="Advantage player1";
-        } else if (minusResult ==-1) {
-            score ="Advantage player2";
-        } else if (minusResult>=2) {
-            score = "Win for player1";
-        } else {
-            score ="Win for player2";
-        }
         return score;
     }
 
-    private static boolean isAdvantageOrWin(int pointsPlayer1, int pointsPlayer2) {
-        return pointsPlayer1 >= 4 || pointsPlayer2 >= 4;
-    }
 
-    private static String getTieScores(int pointsPlayers) {
-        String[] tieScores = {"Love-All","Fifteen-All","Thirty-All"};
+    private static String getTieScore(int pointsPlayers) {
+        String []tieScores ={
+                "Love-All", "Fifteen-All", "Thirty-All", "Forty-All", "Deuce"
+        };
         return pointsPlayers >= 4 ? "Deuce" : tieScores[pointsPlayers];
+
     }
 
-    private static boolean isTie(int pointsPlayer1, int pointsPlayer2) {
-        return pointsPlayer1 == pointsPlayer2;
+    private static boolean isTie(int pointsPlayer1, int PointsPlayer2) {
+        return pointsPlayer1 == PointsPlayer2;
     }
 }
